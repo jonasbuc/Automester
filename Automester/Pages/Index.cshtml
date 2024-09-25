@@ -1,0 +1,20 @@
+﻿@page
+@model Automester.Pages.IndexModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<h1>Velkommen til vores hjemmeside!</h1>
+
+<nav>
+    <ul>
+        <li><a asp-page="/Index">Hjem</a></li>
+        <li><a asp-page="/Cars/Index">Biler</a></li>
+        <li><a asp-page="/Customers/Index">Kunder</a></li>
+        <li><a asp-page="/Employees/Index">Ansatte</a></li>
+        <li><a asp-page="/ReadyForPickups/ReadyForPickups">Klar til afhentning</a></li>
+        <li><a asp-page="/Workshops/Workshops">Er på værksted</a></li>
+        <li><a asp-page="/Repairs/Index">Repration</a></li>
+    </ul>
+</nav>

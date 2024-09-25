@@ -1,0 +1,66 @@
+﻿@page
+@model Automester.Pages.Repairs.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Repair[0].StartDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repair[0].EndDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repair[0].Description)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repair[0].Price)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repair[0].Status)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Repair[0].Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Repair) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.StartDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.EndDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Description)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Price)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarId)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.RepairId">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.RepairId">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.RepairId">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

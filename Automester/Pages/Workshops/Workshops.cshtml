@@ -1,0 +1,40 @@
+﻿@page
+@model Automester.Pages.Workshops.WorkshopsModel
+
+@{
+    ViewData["Title"] = "Workshops";
+}
+
+<h1>Workshops</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Workshop[0].ArrivalDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Workshop[0].Car)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Workshop) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ArrivalDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarId)
+            </td>
+            <td>
+                
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,43 @@
+﻿@page
+@model Automester.Pages.ReadyForPickups.ReadyForPickupsModel
+
+@{
+    ViewData["Title"] = "ReadyForPickups";
+}
+
+<h1>ReadyForPickups</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadyForPickup[0].ReadyDate)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadyForPickup[0].Car)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ReadyForPickup[0].Car.Customer.Name)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.ReadyForPickup) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.ReadyDate)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.CarId)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Car.Customer.Name)
+            </td>
+        </tr>
+}
+    </tbody>
+</table>
